@@ -4,7 +4,8 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
   <body>
-    <a-scene arjs>
+    <a-scene embedded
+      arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
      <a-marker preset="hiro">
                 <a-image rotation="-90 0 0" position="0 0 0" src="vistaMacho.png"></a-image>
                 <a-sphere position="0 0 0" radius="0.25" color="blue"> </a-sphere>
