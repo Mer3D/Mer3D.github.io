@@ -5,15 +5,14 @@
   </head>
   <body>
     <a-scene arjs>
-      <a-marker type="pattern" url="https://cdn.glitch.global/d50fd6ba-496f-447c-a6f2-03570a3884b9/pattern-GarrapMarker.patt?v=1687572189140/pattern-GarrapMarker.patt">
-      <a-sphere position="0 1.5 -1" radius="0.1" color="#5EEF2D"> </a-sphere>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4"> </a-plane>
-      </a-marker>
-      <a-marker preset="hiro">
-        <a-sphere position="0 1.5 -1" radius="0.1" color="yellow"> </a-sphere>
-        <a-entity position="0 0 0" scale="0.1 0.1 0.1" gltf-model="https://cdn.glitch.global/d50fd6ba-496f-447c-a6f2-03570a3884b9/x-garraP-v1.glb?v=1687571912193/x-garraP-v1.glb">
-        </a-entity>
-      </a-marker>
+     <a-marker preset="hiro">
+                <a-image rotation="-90 0 0" position="0 0 0" src="vistaMacho.png"></a-image>
+                <a-sphere position="0 0 0" radius="0.25" color="blue"> </a-sphere>
+            </a-marker>   
+                <a-marker preset="custom" url="pattern-GarrapMarker.patt">
+                    <a-image rotation="-90 0 0" position="0 0 0" src="vistaHembra.png"></a-image>
+                    <a-sphere position="0 0 0" radius="0.25" color="yellow"> </a-sphere>
+            </a-marker>
      
     </a-scene>
    
