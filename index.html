@@ -1,39 +1,537 @@
-<html>
-  <head>
-<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-marker type= "pattern" url="pattern-Macho.patt"> 
-      <a-entity position="0.4 0 -1.5" scale= "0.25 0.25 0.25" gltf-model= "x-garraPv2.glb">
-      </a-entity>  
-      </a-marker>
-      
-       <a-marker type= "pattern" url="pattern-hembra.patt"> 
-    <a-entity position= "0 -1 1" scale= "1 1 1" rotation= "-90 -90 0" gltf-model= "garrapataExp4.glb">
-    </a-entity>
-    </a-marker>
-      
-      <a-marker type= "pattern" url="pattern-informacion.patt"> 
-      <a-image position= "0 1 -2" rotation= "-90 0 0" scale= "1 1 1" src= "cara1.png" ></a-image>
-      </a-marker>
-      
-      <a-marker type= "pattern" url="pattern-GarrapMarker.patt"> 
-     <a-image position= "0 0 -2" scale= "2 2 2" rotation= "-90 0 0" src= "cara-2.png" ></a-image>
-      </a-marker>    
-      
-       <a-marker type= "pattern" url="pattern-rickettsia.patt"> 
-      <a-image position= "0 0 -2" scale= "2 2 2" rotation= "-90 0 0" src= "Imagen2.png" ></a-image>
-      </a-marker>
-      
-      <a-marker type= "pattern" url="pattern-prevenir.patt"> 
-      <a-image position= "0 0 -2" scale= "2 2 2" rotation= "-90 0 0" src= "PREVENCIÓN.png" ></a-image>
-      </a-marker>
-      
-    
-        </a-scene>
-   
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+div {
+  width:30%;  
+  display:inline-block;
+}
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Modelado y Animación en 3D</h2>
+<p>El modelado consiste en la elaboración geométrica de la forma del objeto elegido y se complementa con el color, textura, renderización.
+La animación consiste en dar movimiento al objeto, usando transformaciones geométricas, propeidades físicas o algún modelo matemático que defina el patrón del movimiento.</p>
+
+<p>En la Unidad I, el estudiante describirá los elementos computacionales requeridos para modelar y animar un objeto 3D, considerando sus propiedades para determinar las opciones de movimiento.</p>
+
+<!-- ============================================================ UNIDAD I-->
+<header>
+  <h2>Unidad I: Introducción al modelado y animación por computadora</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><button onClick="changevid('image/RenderGarrapancha.mp4')">Insecto</button></li>
+      <li><button onClick="changevid('image/motionTexture.mp4')">Animación de textura</button> </li>
+      <li><button onClick="changevid('image/jaguarFMAT.mp4')">Esferas jaguar</button> </li>
+      <li><button onClick="changevid('image/reaction.mp4')">Reaction Diffusion</button> </li>
+      <!-- <li><button type="button" onclick="myFunction11()">El plano</button></li>
+      <li><button type="button" onclick="myFunction12()">Ejes de Coordenadas</button></li>
+      <li><button type="button" onclick="myFunction13()">Operaciones con Matrices</button></li> -->
+    </ul>
+    
+  </nav>
+  
+  <article>
+    
+    <p id="demo">Modelado y Animación de una Garrapata</p>
+    <video controls id="change" width="300" height="200">
+      <source src="image/RenderGarrapancha.mp4" type="video/mp4"></source>
+    </video>
+    <!-- <video id="myVideo" width="200" height="125" controls autoplay>
+      <source id="mp4_src" src="image/RenderGarrapancha.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video> -->
+   </article>
+
+</section>
+
+<div style="background-color:#FFF4A3;">
+  <h2>Descripción</h2>
+  <p id="desc">movimiento articulado en un insecto</p>
+  <p> . </p>
+</div>
+
+<div style="background-color:#D9EEE1;">
+  <h2>Temas</h2>
+  <p id="label">modelado poligonal, texturizado, iluminación, aniamción articulada </p>
+  
+  <!-- <p>  <a id="myFile" href="files/unidadI/plano.blend"> descarga archivo</a> </p> -->
+</div>
+
+<footer>
+  <p> https://www.cgw.com</p>
+  <p> https://dl.acm.org/journal/tog</p>
+</footer>
+
+<!-- ============================================================ UNIDAD II-->
+<p>En la unidad II el estudiante obtendrá las herramientas para modelar objetos 2D y 3D con alguna de las técnicas vistas en clase.</p>
+
+<header>
+  <h2>Unidad II: Modelado de Objetos 2D/3D</h2>
+</header>
+<section>
+  <nav>
+    <ul>
+      <li><button type="button" onclick="myFunction24()">Modelado Poligonal</button></li>
+      <li><button type="button" onclick="myFunction25()">Modelado CSG</button></li>
+      <li><button type="button" onclick="myFunction26()">Modelado con Curvas</button></li>
+      <li><button type="button" onclick="myFunction27()">Modelado Procedural</button></li>
+      <li><button type="button" onclick="myFunction28()">Modelado con Nodos</button></li>
+    </ul>
+    
+  </nav>
+  
+  <article>
+    <p id="demo2">Realizar el modelado con creación y modificación de geometría con polígonos</p>
+    <img id="myImage2" src="image/casa_solar.png" width="150" height="125">
+   </article>
+
+</section>
+
+<div style="background-color:#FFF4A3;">
+  <h2>Descripción</h2>
+  <p id="desc2">Creación de una casa</p>
+  <p> . </p>
+</div>
+
+<div style="background-color:#D9EEE1;">
+  <h2>Archivo Blender</h2>
+  <p id="label2">casa.blend </p>
+  <p>  <a id="myFile2" href="files/unidadII/casaSolar.blend"> descarga archivo</a> </p>
+</div>
+<footer>
+  <p> https://github.com/g-trunc/glm</p>
+  <p> Philip Schneider, David Eberly. Geometric Tools for Computer Graphics </p>
+</footer>
+<!-- ============================================================ UNIDAD III-->
+
+<p>En la unidad III el estudiante dará animación a los objetos creados, atendiendo a sus características de movimiento.</p>
+
+<header>
+  <h2>Unidad III: Animación de Objetos 2D/3D</h2>
+</header>
+<section>
+  <nav>
+    <ul>
+      <li><button type="button" onclick="myFunction31()">Animación Geométrica</button></li>
+      <li><button type="button" onclick="myFunction32()">Animación con deformaciones</button></li>
+      <li><button type="button" onclick="myFunction33()">Animación con caminos</button></li>
+      <li><button type="button" onclick="myFunction34()">Animación con Física</button></li>
+      <li><button type="button" onclick="myFunction35()">Animación con Física: tela</button></li>
+      <li><button type="button" onclick="myFunction37()">Animación con Armaduras</button></li>
+    </ul>
+    
+  </nav>
+  
+  <article>
+    <p id="demo3">keyframing de transformaciones geométricas</p>
+    <img id="myImage3" src="image/TorresHanoi.png" width="150" height="125">
+   </article>
+
+</section>
+<div style="background-color:#FFF4A3;">
+  <h2>Descripción</h2>
+  <p id="desc3">movimiento frame by frame</p>
+  <p> . </p>
+</div>
+
+<div style="background-color:#D9EEE1;">
+  <h2>Archivo Blender</h2>
+  <p id="label3">TorresHanoi.blend </p>
+  <p>  <a id="myFile3" href="files/unidadIII/TorresHanoi.blend"> descarga archivo</a> </p>
+</div>
+<footer>
+  <p> Jame Van Verth, Lars Bishop. Essential Mathematics for Games and Interactive Applications</p>
+  <p> V. Gordon, J. Clevenger. Computer Graphics Programming in OpenGL with Java </p>
+</footer>
+<!-- ============================================================ UNIDAD IV-->
+
+<p>En la unidad IV el estudiante utilizará los modelos y animaciones creados en aplicaciones como los videojuegos.</p>
+
+<header>
+  <h2>Unidad IV: Aplicación del modelado y animación 3D</h2>
+</header>
+<section>
+  <nav>
+    <ul>
+      <li><button type="button" onclick="myFunction41()">Facultad de Matemáticas</button></li>
+      <li><button type="button" onclick="myFunction42()">Sphere Textured Animation</button></li>
+      <li><button type="button" onclick="myFunction43()">Animación de soga</button></li>
+      <li><button type="button" onclick="myFunction44()">Cuadrúpedos</button></li>
+      <li><button type="button" onclick="myFunction45()">Insectos</button></li>
+      <li><button type="button" onclick="myFunction46()">Reaction Diffusion</button></li>
+    </ul>
+    
+  </nav>
+  
+  <article>
+    <p id="demo4">Modelado de la Facultad de Matemáticas</p>
+    <img id="myImage4" src="image/fmat.PNG" width="225" height="125">
+   </article>
+
+</section>
+<div style="background-color:#FFF4A3;">
+  <h2>Descripción</h2>
+  <p id="desc4">Técnicas variadas de modelado</p>
+  <p> . </p>
+</div>
+
+<div style="background-color:#D9EEE1;">
+  <h2>Archivo Blender</h2>
+  <p id="label4">fmat.blend </p>
+  <p>  <a id="myFile4" href="files/unidadIV/fmat.blend"> descarga archivo</a> </p>
+</div>
+<footer>
+  <p> https://themayantrip.com/</p>
+  <p> F. Madera, P. Moreno, F. Moo. Modelado de un felino, A&A vol. 30, 2020 </p>
+  <p> J. Madera, F. Madera, L. Hernando. The use of characters in 3D environments, International Journal of Innovations in Engineering and Technology vol. 13, 2019 </p>
+</footer>
+<!-- ============================================================ -->
+<script>
+  /*============================================================ UNIDAD I*/
+
+  function changevid(buttonLink) {
+    document.getElementById('change').src = buttonLink;
+    if(buttonLink=="image/RenderGarrapancha.mp4"){
+      document.getElementById("demo").innerHTML = "Modelado y Animación de una Garrapata";
+      document.getElementById("label").innerHTML = "modelado poligonal, texturizado, iluminación, animación articulada";
+      document.getElementById("desc").innerHTML = "movimiento articulado en un insecto";
+    }
+    else if(buttonLink=="image/motionTexture.mp4") {document.getElementById("demo").innerHTML = "Animación de una textura que envuelve a una esfera";
+      document.getElementById("label").innerHTML = "No hay movimiento de geometría";
+      document.getElementById("desc").innerHTML = "uso de nodos para animar la textura";
+    }
+    else if(buttonLink=="image/jaguarFMAT.mp4") {
+      document.getElementById("demo").innerHTML = "Animación de un jaguar con esferas";
+      document.getElementById("label").innerHTML = "modelado poligonal, texturizado, iluminación, animación articulada";
+      document.getElementById("desc").innerHTML = "movimiento articulado de un cuadúpedo";
+    }
+    else {document.getElementById("demo").innerHTML = "Animación de un logo con reaction diffusion";
+      document.getElementById("label").innerHTML = "partículas que siguen un modelo matemático";
+      document.getElementById("desc").innerHTML = "modelado, partículas, texturizado";
+    }
+      
+  }
+function myFunction11() { 
+  document.getElementById("demo").innerHTML = "Modelado y Animación de una Garrapata";
+  document.getElementById("desc").innerHTML = "movimiento articulado en un insecto";
+  document.getElementById("label").innerHTML = "modelado poligonal, texturizado, iluminación, aniamción articulada";
+  
+  /*pic="image/imagen2-2.png"
+  document.getElementById('myImage').src = pic;
+  pac="files/unidadI/plano.blend"
+  document.getElementById('myImage').width = "200";
+  document.getElementById('myFile').href = pac;
+  vid = document.getElementById("myVideo");
+  isSupp = vid.canPlayType("video/mp4");
+  document.getElementById("myVideo").src="image/RenderGarrapancha.mp4";
+  document.getElementById("myVideo").load();*/
+}
+function myFunction12() { 
+  document.getElementById("demo").innerHTML = "Ejes de coordenadas en 3D";
+  document.getElementById("desc").innerHTML = "Coordenadas Globales y Coordenadas Locales";
+  document.getElementById("label").innerHTML = "ejes_coordenadas.blend";
+  
+  pic="image/ejes de coordenadas.png"
+  document.getElementById('myImage').src = pic;
+  pac="files/unidadI/ejes_coordenadas.blend"
+  document.getElementById('myImage').width = "125";
+  document.getElementById('myFile').href = pac;
+
+  //videoSource="image/RenderGarrapancha.mp4"
+  //document.getElementById('miVideo').src=videoSource;
+  //video.style.display = "block";
+  //document.getElementById('miVideo').play();
+  //document.querySelector('myVideo').src="image/Logo_UADY.mp4";
+  //document.querySelector('myVideo').play();
+  vid = document.getElementById("myVideo");
+  isSupp = vid.canPlayType("video/mp4");
+  document.getElementById("myVideo").src="image/Logo_UADY.mp4";
+  document.getElementById("myVideo").load();
+  //document.getElementById('myVideo').play();
+}
+function myFunction13() { 
+  document.getElementById("demo").innerHTML = "Operaciones con Matrices";
+  document.getElementById("desc").innerHTML = "Se utilizan para transformaciones geométricas: traslación, rotación, escalamiento";
+  document.getElementById("label").innerHTML = "matrices.blend";
+  pic="image/matrices.png"
+  document.getElementById('myImage').width = "400";
+  document.getElementById('myImage').height = "200";
+  document.getElementById('myImage').src = pic;
+}
+/*============================================================ UNIDAD II*/
+function myFunction24() { 
+  document.getElementById("demo2").innerHTML = "Realizar el modelado con creación y modificación de geometría con polígonos";
+  document.getElementById("desc2").innerHTML = "Creación de una casa";
+  document.getElementById("label2").innerHTML = "casaSolar.blend";
+  
+  pic2="image/casa_solar.png"
+  document.getElementById('myImage2').src = pic2;
+  document.getElementById('myImage2').width = "150";
+  pac2="files/casaSolar.blend"
+  document.getElementById('myFile2').href = pac2;
+}
+function myFunction25() { 
+  document.getElementById("demo2").innerHTML = "Utilizar operaciones booleanos para aplicar en la geometría del objeto";
+  document.getElementById("desc2").innerHTML = "Castillo de Chichen Itzá uniendo objetos, Constructive Solid Geometry";
+  document.getElementById("label2").innerHTML = "castillo.blend";
+  
+  pic2="image/imagen2-6.png"
+  document.getElementById('myImage2').src = pic2;
+  document.getElementById('myImage2').width = "150";
+  pac2="files/unidadII/castillo.blend"
+  document.getElementById('myFile2').href = pac2;
+}
+function myFunction26() { 
+  document.getElementById("demo2").innerHTML = "Se toma como base una curva para crear el modelo";
+  document.getElementById("desc2").innerHTML = "Figura Geométrica de un cerdo";
+  document.getElementById("label2").innerHTML = "cerdo.blend";
+  
+  pic2="image/cerdo.png"
+  document.getElementById('myImage2').src = pic2;
+  document.getElementById('myImage2').width = "200";
+  pac2="files/unidadII/cerdo.blend"
+  document.getElementById('myFile2').href = pac2;
+}
+function myFunction27() { 
+  document.getElementById("demo2").innerHTML = "Scripts para crear modelos";
+  document.getElementById("desc2").innerHTML = "Triángulos 3D de Sierpinski";
+  document.getElementById("label2").innerHTML = "escaleras.blend";
+  
+  pic2="image/escalera.png"
+  document.getElementById('myImage2').src = pic2;
+  document.getElementById('myImage2').width = "100";
+  document.getElementById('myImage2').height = "160";
+  pac2="files/unidadII/escaleras.blend"
+  document.getElementById('myFile2').href = pac2;
+}
+function myFunction28() { 
+  document.getElementById("demo2").innerHTML = "Modelado procedural con nodos";
+  document.getElementById("desc2").innerHTML = "Esfera con cubierta de hexágonos";
+  document.getElementById("label2").innerHTML = "GettingNodes.blend";
+  
+  pic2="image/nodes.png"
+  document.getElementById('myImage2').src = pic2;
+  document.getElementById('myImage2').width = "100";
+  pac2="files/unidadII/GettingNodes.blend"
+  document.getElementById('myFile2').href = pac2;
+}
+/*============================================================ UNIDAD III*/
+function myFunction31() { 
+  document.getElementById("demo3").innerHTML = "keyframing de transformaciones geométricas";
+  document.getElementById("desc3").innerHTML = "movimiento frame by frame";
+  document.getElementById("label3").innerHTML = "TorresHanoi.blend";
+  
+  pic2="image/TorresHanoi.png"
+  document.getElementById('myImage3').src = pic2;
+  document.getElementById('myImage3').width = "150";
+  pac2="files/unidadIII/TorresHanoi.blend"
+  document.getElementById('myFile3').href = pac2;
+}
+function myFunction32() { 
+  document.getElementById("demo3").innerHTML = "animación en algunas regiones del objeto";
+  document.getElementById("desc3").innerHTML = "deformando un objeto con transformaciones geométricas";
+  document.getElementById("label3").innerHTML = "morphing.blend";
+  
+  pic2="image/morphing.png"
+  document.getElementById('myImage3').src = pic2;
+  pac2="files/unidadIII/morphing.blend"
+  document.getElementById('myFile3').href = pac2;
+}
+function myFunction33() { 
+  document.getElementById("demo3").innerHTML = "defines un camino para que lo recorra el objeto";
+  document.getElementById("desc3").innerHTML = "recorrido de un camino definido";
+  document.getElementById("label3").innerHTML = "followPath.blend";
+  
+  pic2="image/followPath.png"
+  document.getElementById('myImage3').src = pic2;
+  document.getElementById('myImage2').width = "150";
+  pac2="files/unidadIII/followPath.blend"
+  document.getElementById('myFile3').href = pac2;
+}
+function myFunction34() { 
+  document.getElementById("demo3").innerHTML = "propiedades físicas de los objetos";
+  document.getElementById("desc3").innerHTML = "objetos rígidos, deformables";
+  document.getElementById("label3").innerHTML = "algo.blend";
+  pic2="image/imagen4-4.png"
+  document.getElementById('myImage3').src = pic2;
+  pac2="files/unidadIII/cadena.blend"
+  document.getElementById('myFile3').href = pac2;
+}
+function myFunction35() { 
+  document.getElementById("demo3").innerHTML = "propiedades físicas de ropa o tela";
+  document.getElementById("desc3").innerHTML = "deformación con tela";
+  document.getElementById("label3").innerHTML = "algo.blend";
+  pic2="image/imagen4-5.png"
+  document.getElementById('myImage3').src = pic2;
+  document.getElementById('myImage3').width = "100";
+  pac2="files/unidadIII/cloth.blend"
+  document.getElementById('myFile3').href = pac2;
+}
+function myFunction36() { 
+  document.getElementById("demo3").innerHTML = "propiedades físicas de fluidos";
+  document.getElementById("desc3").innerHTML = "simulación de agua, líquido";
+  document.getElementById("label3").innerHTML = "algo.blend";
+  pic2="image/puffer.png"
+  document.getElementById('myImage3').src = pic2;
+  document.getElementById('myImage3').width = "100";
+  pac2="files/plano.blend"
+  document.getElementById('myFile3').href = pac2;
+}
+function myFunction37() { 
+  document.getElementById("demo3").innerHTML = "animación con huesos virtuales";
+  document.getElementById("desc3").innerHTML = "deformación articulada";
+  document.getElementById("label3").innerHTML = "bones.blend";
+  pic2="image/bones.png"
+  document.getElementById('myImage3').src = pic2;
+  document.getElementById('myImage3').height = "175";
+  document.getElementById('myImage3').width = "125";
+  pac2="files/unidadIII/BASEmodel.blend"
+  document.getElementById('myFile3').href = pac2;
+}
+/*============================================================ UNIDAD IV*/
+function myFunction41() { 
+  document.getElementById("demo4").innerHTML = "Modelado de la Facultad de Matemáticas";
+  document.getElementById("desc4").innerHTML = "Técnicas variadas de modelado";
+  document.getElementById("label4").innerHTML = "fmat.blend";
+  
+  pic2="image/fmat.png"
+  document.getElementById('myImage4').src = pic2;
+  document.getElementById('myImage4').width = "225";
+  document.getElementById('myImage4').height = "125";
+  pac2="files/unidadIV/fmat.blend"
+  document.getElementById('myFile4').href = pac2;
+}
+function myFunction42() { 
+  document.getElementById("demo4").innerHTML = "Animación de la textura de una esfera";
+  document.getElementById("desc4").innerHTML = "simula el movimiento de geometría, pero es movimiento de textura";
+  document.getElementById("label4").innerHTML = "organicAnimation.blend";
+  
+  pic2="image/sphere.png"
+  document.getElementById('myImage4').src = pic2;
+  document.getElementById('myImage4').width = "165";
+  document.getElementById('myImage4').height = "150";
+  pac2="files/unidadIV/organicAnimation.blend"
+  document.getElementById('myFile4').href = pac2;
+}
+function myFunction43() { 
+  document.getElementById("demo4").innerHTML = "Movimiento y animación de uan soga";
+  document.getElementById("desc4").innerHTML = "colisión y repulsión de la soga con un tubo";
+  document.getElementById("label4").innerHTML = "rope.blend";
+  
+  pic2="image/rope.png"
+  document.getElementById('myImage4').src = pic2;
+  document.getElementById('myImage4').width = "155";
+  document.getElementById('myImage4').height = "150";
+  pac2="files/unidadIV/rope.blend"
+  document.getElementById('myFile4').href = pac2;
+}
+function myFunction44() { 
+  document.getElementById("demo4").innerHTML = "modelado y animación de un jaguar";
+  document.getElementById("desc4").innerHTML = "movimiento articulado";
+  document.getElementById("label4").innerHTML = "Jaguar.blend";
+  
+  pic2="image/imagen5-4.png"
+  document.getElementById('myImage4').src = pic2;
+  document.getElementById('myImage3').width = "175";
+  document.getElementById('myImage4').height = "150";
+  pac2="files/unidadIV/Jaguar.blend"
+  document.getElementById('myFile4').href = pac2;
+}
+function myFunction45() { 
+  document.getElementById("demo4").innerHTML = "modelado y animación de una Garrapata";
+  document.getElementById("desc4").innerHTML = "movimiento articulado";
+  document.getElementById("label4").innerHTML = "GarrapA1.blend";
+  
+  pic2="image/Garrap.png"
+  document.getElementById('myImage4').src = pic2;
+  document.getElementById('myImage3').width = "175";
+  document.getElementById('myImage4').height = "100";
+  pac2="files/GarrapA1.blend"
+  document.getElementById('myFile4').href = pac2;
+}
+function myFunction46() { 
+  document.getElementById("demo4").innerHTML = "Reaction Diffusion";
+  document.getElementById("desc4").innerHTML = "Movimiento de ...";
+  document.getElementById("label4").innerHTML = "RDLogo.blend";
+  
+  pic2="image/reaction.png"
+  document.getElementById('myImage4').src = pic2;
+  document.getElementById('myImage4').width = "180";
+  document.getElementById('myImage4').height = "120";
+  pac2="files/unidadIV/RDLogo.blend"
+  document.getElementById('myFile4').href = pac2;
+}
+/*============================================================*/
+
+</script>
+</body>
 </html>
